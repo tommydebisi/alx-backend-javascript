@@ -1,0 +1,6 @@
+*node_mod*
+*.eslintr*
+*babel*
+*package*
+*main*
+*utils*
