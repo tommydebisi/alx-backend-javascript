@@ -4,7 +4,7 @@ export default function getFullResponseFromAPI(success) {
     if (success) {
       res({
         status: 200,
-        body: 'success',
+        body: 'Success',
       });
     } else {
       rej(errMessage);
