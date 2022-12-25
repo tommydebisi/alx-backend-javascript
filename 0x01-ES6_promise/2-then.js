@@ -1,17 +1,11 @@
 export default function handleResponseFromAPI(promise) {
   const errMessage = 'Got a response from the API';
-  const apiProm = new Promise((fufilled, rejected) => {
-    if (promise.isFufilled) {
-      fufilled({
-        status: 200,
-        body: 'success',
-      });
-    } else {
-      rejected(new Error());
-    }
-  });
+  const fufilledObj = {
+    status: 200,
+    body: 'success',
+  };
 
-  return apiProm.then((fufilledObj) => fufilledObj)
-    .catch((err) => err)
+  return promise.then(() => fufilledObj)
+    .catch(() => new Error())
     .finally(() => console.log(errMessage));
 }
