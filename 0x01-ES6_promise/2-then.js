@@ -1,5 +1,6 @@
 export default function handleResponseFromAPI(promise) {
-  return new Promise((fufilled, rejected) => {
+  const errMessage = 'Got a response from the API';
+  const apiProm = new Promise((fufilled, rejected) => {
     if (promise) {
       fufilled({
         status: 200,
@@ -8,5 +9,9 @@ export default function handleResponseFromAPI(promise) {
     } else {
       rejected(new Error());
     }
-  }).then(() => console.log('Got a response from the API'));
+  });
+
+  return apiProm.then((fufilledObj) => fufilledObj)
+    .catch((err) => err)
+    .finally(() => console.log(errMessage));
 }
