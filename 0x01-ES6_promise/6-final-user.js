@@ -18,7 +18,6 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
         }
       });
 
-      console.log(statusArr);
       return statusArr;
     });
 }
