@@ -6,12 +6,19 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   return Promise.allSettled([signUpUser(firstName, lastName), uploadPhoto(fileName)])
     .then((prom) => {
       prom.forEach((result) => {
-        statusArr.push({
-          status: result.status,
-          value: result.status === 'fulfilled' ? result.value : result.reason,
-        });
+        if (result.status === 'fulfilled') {
+          statusArr.push(result);
+        } else {
+          const resMessage = result.reason;
+
+          Object.assign(result, { value: resMessage });
+          // eslint-disable-next-line no-param-reassign
+          delete result.reason;
+          statusArr.push(result);
+        }
       });
 
+      console.log(statusArr);
       return statusArr;
     });
 }
