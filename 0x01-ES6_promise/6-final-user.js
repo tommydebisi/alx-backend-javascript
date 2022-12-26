@@ -9,15 +9,16 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
         if (result.status === 'fulfilled') {
           statusArr.push(result);
         } else {
-          const resMessage = result.reason;
+          const resMessage = result.reason.message;
 
-          Object.assign(result, { value: resMessage });
+          Object.assign(result, { value: `Error: ${resMessage}` });
           // eslint-disable-next-line no-param-reassign
           delete result.reason;
           statusArr.push(result);
         }
       });
 
+      console.log(statusArr);
       return statusArr;
     });
 }
