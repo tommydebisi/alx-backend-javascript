@@ -1,4 +1,5 @@
 /* eslint-disable no-underscore-dangle */
+/* eslint-disable class-methods-use-this */
 import Car from './10-car';
 
 export default class EVCar extends Car {
@@ -17,5 +18,5 @@ export default class EVCar extends Car {
     this._range = newRange;
   }
 
-  cloneCar(...args) { return new super.constructor(...args); }
+  cloneCar(...args) { return new Car(...args); }
 }
