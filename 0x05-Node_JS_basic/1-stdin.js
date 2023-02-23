@@ -5,7 +5,8 @@ process.stdin.on('readable', () => {
   const data = process.stdin.read();
 
   if (data) {
-    process.stdout.write(`Your name is: ${data}`);
+    // eslint-disable-next-line prefer-template
+    process.stdout.write('Your name is: ' + data);
   }
 });
 
