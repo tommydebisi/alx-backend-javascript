@@ -27,8 +27,8 @@ function countStudents(file) {
         const endStr = `Number of students: ${cs.length + swe.length}`;
         const endSt1 = `Number of students in CS: ${cs.length}. List: ${cs.join(', ')}`;
         const endSt2 = `Number of students in SWE: ${swe.length}. List: ${swe.join(', ')}`;
-
-        resolve(console.log([endStr, endSt1, endSt2].join('\n')));
+        console.log([endStr, endSt1, endSt2].join('\n'));
+        resolve(`${endStr}\n${endSt1}\n${endSt2}`);
       }
     });
   });
