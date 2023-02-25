@@ -10,6 +10,10 @@ describe('function to calculate addition of whole numbers', function() {
     assert.strictEqual(calculateNumber(1, 3.7), 5);
   });
 
+  it('should round first argument', function() {
+    assert.strictEqual(calculateNumber(4.5, 1), 6);
+  });
+
   it('should round both arguments', function() {
     assert.strictEqual(calculateNumber(1.2, 3.7), 5);
   });
