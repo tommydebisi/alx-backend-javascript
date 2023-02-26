@@ -3,7 +3,6 @@ const expect = chai.expect;
 const calculateNumber = require('./1-calcul');
 
 describe('calculate numbers according to type passed in', () => {
-  describe('Addition test', function() {
     it('should give correct answer for two rounded-up addition', () => {
       const result = calculateNumber('SUM', 1.5, 4.5);
       expect(result).to.equal(7)
@@ -32,9 +31,7 @@ describe('calculate numbers according to type passed in', () => {
       const result = calculateNumber('SUM', -2.3, -6.6);
       expect(result).to.equal(-9)
     });
-  });
 
-  describe('Subtraction test', function() {
     it('should give correct answer for two rounded subtraction', () => {
       expect(calculateNumber('SUBTRACT', 1.4, 4.5)).to.equal(-4);
     });
@@ -58,9 +55,7 @@ describe('calculate numbers according to type passed in', () => {
     it('give correct answer for one negative rounded-up entry', () => {
       expect(calculateNumber('SUBTRACT', 1, -4.6)).to.equal(6);
     });
-  });
 
-  describe('Division test', function() {
     it('gives correct output for two rounded number division', () => {
       expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.equal(0.2);
     });
@@ -88,5 +83,4 @@ describe('calculate numbers according to type passed in', () => {
     it('One negative rounded-down number and divisor is 0', () => {
       expect(calculateNumber('DIVIDE', -1.4, 0)).to.equal('Error');
     });
-  });
 });
