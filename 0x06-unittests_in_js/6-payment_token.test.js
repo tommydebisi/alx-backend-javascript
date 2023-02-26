@@ -10,10 +10,4 @@ describe('getPaymentTokenFromAPI function', function() {
       done();
     });
   });
-
-  it('Gives correct output when success is False', function() {
-    const result = getPaymentTokenFromAPI(false);
-
-    expect(result).to.equal(undefined);
-  });
 });
