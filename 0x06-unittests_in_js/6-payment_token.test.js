@@ -5,7 +5,7 @@ describe('getPaymentTokenFromAPI function', function() {
   it('Gives correct output when success is True', function() {
     const result = getPaymentTokenFromAPI(true);
 
-    result.then((val) => {
+    return result.then((val) => {
       expect(val.data).to.equal('Successful response from the API');
     });
   });
