@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const calculateNumber = require('./1-calcul');
+const calculateNumber = require('./2-calcul_chai');
 
 describe('calculate numbers according to type passed in', () => {
     it('should give correct answer for two rounded-up addition', () => {
