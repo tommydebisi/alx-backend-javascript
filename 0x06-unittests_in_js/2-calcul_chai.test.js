@@ -83,4 +83,8 @@ describe('calculate numbers according to type passed in', () => {
     it('One negative rounded-down number and divisor is 0', () => {
       expect(calculateNumber('DIVIDE', -1.4, 0)).to.equal('Error');
     });
+
+    it('should check type of return value when b is 0', function () {
+      expect(calculateNumber('DIVIDE', 2, 0)).to.be.a('string')
+    });
 });
