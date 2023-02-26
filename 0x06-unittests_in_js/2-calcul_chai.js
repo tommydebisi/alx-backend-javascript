@@ -9,7 +9,7 @@ function calculateNumber(type, a, b) {
 
   if (type === 'DIVIDE') {
     const res = Math.round(b);
-    if (res == 0) {
+    if (res === 0) {
       return 'Error';
     }
     return Math.round(a) / res;
