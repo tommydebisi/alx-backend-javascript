@@ -79,12 +79,13 @@ describe('API test on /available_payments route', function() {
   it('gives correct when endpoint queried', function(done) {
     request({
       url: 'http://localhost:7865/available_payments',
-      method: 'GET'
+      method: 'GET',
+      json: true
     }, (err, res, body) => {
       if (err) {
         console.log(err);
       }
-      expect(body).to.equal('{"payment_methods":{"credit_cards":true,"paypal":false}}')
+      expect(body).to.deep.equal({"payment_methods":{"credit_cards":true,"paypal":false}})
       done();
     });
   });
