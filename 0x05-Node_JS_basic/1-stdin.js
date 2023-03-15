@@ -1,12 +1,10 @@
 /* eslint-disable jest/require-hook */
-process.stdout.write('Welcome to Holberton School, what is your name?\n');
-process.stdin.setEncoding('utf-8');
+console.log('Welcome to Holberton School, what is your name?');
 process.stdin.on('readable', () => {
   const data = process.stdin.read();
 
   if (data) {
-    // eslint-disable-next-line prefer-template
-    process.stdout.write('Your name is: ' + data);
+    process.stdout.write(`Your name is: ${data}`);
   }
 });
 
