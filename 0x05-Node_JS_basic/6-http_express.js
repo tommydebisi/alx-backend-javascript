@@ -1,4 +1,3 @@
-/* eslint-disable jest/require-hook */
 const express = require('express');
 
 /**
